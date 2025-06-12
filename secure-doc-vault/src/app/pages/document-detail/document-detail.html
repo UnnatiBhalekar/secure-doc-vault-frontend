@@ -1,0 +1,8 @@
+<ng-container *ngIf="doc">
+  <h2>{{ doc.filename }}</h2>
+  <p>Status: {{ doc.status }}</p>
+  <button mat-button (click)="process()">Redact</button>
+  <button mat-button (click)="download()" [disabled]="doc.status!=='Redacted'">
+    Download Redacted
+  </button>
+</ng-container>
