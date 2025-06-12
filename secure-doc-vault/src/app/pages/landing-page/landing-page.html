@@ -1,0 +1,28 @@
+<!-- src/app/pages/landing-page/landing-page.component.html -->
+<mat-toolbar color="primary" class="toolbar">
+  <span class="logo">SecureDocVault</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/login">Login</button>
+  <button mat-raised-button color="accent" routerLink="/signup">Sign Up</button>
+</mat-toolbar>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Protect Your Documents with AI-Powered Redaction</h1>
+    <p>Secure, encrypted storage and automated PII redaction for your organization’s sensitive files.</p>
+    <button mat-raised-button color="accent" class="hero-btn">Get Started</button>
+  </div>
+</section>
+
+<section class="features">
+  <div class="features-grid">
+    <mat-card *ngFor="let f of features" class="feature-card">
+      <mat-card-title>{{ f.title }}</mat-card-title>
+      <mat-card-content>{{ f.description }}</mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<mat-toolbar color="accent" class="footer">
+  <span>© {{ currentYear }} SecureDocVault. All rights reserved.</span>
+</mat-toolbar>

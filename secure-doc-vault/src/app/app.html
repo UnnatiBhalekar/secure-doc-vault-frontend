@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span class="logo">SecureDocVault</span>
+  <span class="spacer"></span>
+
+  <!-- Public nav -->
+  <ng-container *ngIf="!auth.isLoggedIn()">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-raised-button color="accent" routerLink="/signup">Sign Up</button>
+  </ng-container>
+
+  <!-- Private nav (after login) -->
+  <ng-container *ngIf="auth.isLoggedIn()">
+    <button mat-button routerLink="/dashboard">Dashboard</button>
+    <button mat-button routerLink="/upload">Upload</button>
+    <button mat-button routerLink="/audit">Audit Log</button>
+    <button mat-button routerLink="/profile">Profile</button>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

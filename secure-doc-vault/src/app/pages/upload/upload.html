@@ -1,0 +1,25 @@
+<div class="upload-container">
+  <h2>Upload Document</h2>
+
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="upload()"
+    [disabled]="!selectedFile"
+  >
+    Upload
+  </button>
+
+  <mat-progress-bar
+    *ngIf="uploadProgress !== null"
+    mode="determinate"
+    [value]="uploadProgress"
+  ></mat-progress-bar>
+
+  <!-- In-page confirmation banner -->
+  <div *ngIf="docId" class="upload-success">
+    ✅ Upload complete! Document ID: <strong>{{ docId }}</strong>
+  </div>
+</div>
